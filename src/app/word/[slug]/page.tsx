@@ -8,8 +8,7 @@ export default function Page({ params }: { params: { slug: string } }) {
     const { data, error } = useSWR(`/api/query/${params.slug}`, fetcher)
 
     if (error) return <div className={'bg-slate-700 max-w-full h-screen flex-col flex items-center text-5xl text-white ' + NotoSans.className}>Failed to load! Report this to ewan@ewanfox.com</div>
-    if (!data) return <div className={'bg-slate-700 max-w-full h-screen flex-col flex items-center text-5xl text-white ' + NotoSans.className}>Loading...</div>
-
+    if (!data) return <div className={'bg-slate-700 max-w-full h-screen flex-col flex items-center text-5xl text-white ' + NotoSans.className}></div>
     console.log(data)
     return (
         <div className='bg-slate-700 h-full'>
